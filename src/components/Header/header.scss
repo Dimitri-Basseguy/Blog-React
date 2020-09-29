@@ -1,0 +1,19 @@
+@import 'src/styles/vars';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $gutter;
+  padding: $gutter;
+  border-bottom: 1px solid $alt-color;
+
+  &__link {
+    margin: 1rem;
+    color: $dark-color;
+    
+    &:hover, &--active {
+      color: $primary-color;
+    }
+  }
+}
