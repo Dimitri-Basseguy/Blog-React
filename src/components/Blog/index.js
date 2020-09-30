@@ -12,7 +12,7 @@ import './blog.scss';
 // == Composant
 const Blog = () => (
   <div className="blog">
-    <Header categories={categoriesData} currentCategory="Accueil" />
+    <Header categories={categoriesData} />
     <Posts posts={postsData} />
     <Footer />
   </div>

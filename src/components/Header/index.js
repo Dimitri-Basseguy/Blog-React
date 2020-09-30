@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// https://reactrouter.com/web/api/NavLink
+import { NavLink } from 'react-router-dom';
 
 import './header.scss';
 
-const Header = ({ categories, currentCategory }) => (
+const Header = ({ categories }) => (
   <header className="header">
     <nav>
-      {categories.map((category) => {
-        const className = (category.label === currentCategory ? 'header__link header__link--active' : 'header__link');
-        return (
-          <a key={category.label} className={className} href="">{category.label}</a>
-        );
-      })}
+      {categories.map((category) => (
+        <NavLink
+          exact /* égale exact=true */
+          to={category.route}
+          key={category.label}
+          className="header__link"
+          activeClassName="header__link--active"
+        >
+          {category.label}
+        </NavLink>
+      ))}
     </nav>
   </header>
 );
