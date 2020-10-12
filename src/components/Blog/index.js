@@ -3,7 +3,7 @@ import React from 'react';
 // Composant route : faire un rendu en fonction de l'url courante. 
 // + Composant switch : seulement la premier route qui correspond est rendue 
 // => utile pour page d'erreur 404
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
 // == Import
 import categoriesData from 'src/data/categories';
@@ -27,6 +27,7 @@ const Blog = () => (
   <div className="blog">
     <Header categories={categoriesData} />
     <Switch>
+      <Redirect from="/jquery" to="/autre" />
       {categoriesData.map((category) => (
         <Route exact path={category.route} key={category.label}>
           <Posts posts={getPostByCategory(postsData, category.label)} />
