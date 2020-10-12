@@ -1,7 +1,9 @@
 // == Import npm
 import React from 'react';
-// Composant route : faire un rendu en fonction de l'url courante.
-import { Route } from 'react-router-dom';
+// Composant route : faire un rendu en fonction de l'url courante. 
+// + Composant switch : seulement la premier route qui correspond est rendue 
+// => utile pour page d'erreur 404
+import { Link, Route, Switch } from 'react-router-dom';
 
 // == Import
 import categoriesData from 'src/data/categories';
@@ -21,23 +23,25 @@ import './blog.scss';
 */
 
 // == Composant
-const Blog = () => {
-  const postsReact = getPostByCategory(postsData, 'React');
-
-  // console.log(getPostByCategory(postsData, 'Autre'));
-
-  return (
-    <div className="blog">
-      <Header categories={categoriesData} />
+const Blog = () => (
+  <div className="blog">
+    <Header categories={categoriesData} />
+    <Switch>
       {categoriesData.map((category) => (
         <Route exact path={category.route} key={category.label}>
           <Posts posts={getPostByCategory(postsData, category.label)} />
         </Route>
       ))}
-      <Footer />
-    </div>
-  );
-};
+      <Route>
+        <div>
+          <img src="https://cdn.dribbble.com/users/1197927/screenshots/8062981/media/498b9f796d031f3c2370130510d63f2f.gif" alt="error 404"/>
+          <h1>Sacrebleu ! Page non trouvée. (erreur 404) | <Link to="/">Retourner sur l'accueil</Link></h1>
+        </div>
+      </Route>
+    </Switch>
+    <Footer />
+  </div>
+);
 
 // == Export
 export default Blog;
