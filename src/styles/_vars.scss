@@ -1,8 +1,11 @@
 // Generic
-$primary-color: #e52354;
-$alt-color: #ddd;
-$dark-color: #101010;
-$light-color: #fff;
+$primary-color: #FFAF00;
+$alt-color: #9FEF02;
+$dark-color: #141D2C;
+$blue-color: #2E6CFF;
+$blue2-color: #5CB3FF;
+$light-color: #C5F467;
+$grey-color: #C6D2EB;
 $gutter: 2rem;
 
 // Global
@@ -12,8 +15,8 @@ $global-font-weight: 300;
 // Title
 $title-font: 'Oswald', sans-serif;
 $title-font-weight: 500;
-$title-color: #000;
+$title-color: $primary-color;
 
 // Post
-$post-text-color: #666;
+$post-text-color: #2EE7B6;
 $post-hover-color: #f7f7f7;

@@ -7,13 +7,22 @@
   margin: $gutter;
   padding: $gutter;
   border-bottom: 1px solid $alt-color;
+  // background-color: $light-color;
+  margin: 0px;
 
   &__link {
     margin: 1rem;
-    color: $dark-color;
+    color: $light-color;
+    padding: .5rem;
+    border-radius: 4px;
+    background-color: $dark-color;
+    border: 1px solid $alt-color;
+    transition: all .2s ease-in-out;
     
     &:hover, &--active {
-      color: $primary-color;
+      color: $dark-color;
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
     }
   }
 }
