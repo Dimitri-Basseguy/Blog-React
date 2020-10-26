@@ -55,9 +55,11 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
+    "react-loader-spinner": "^3.1.14",
     "react-router-dom": "^5.2.0"
   }
 }
