@@ -39,7 +39,7 @@ const Blog = () => {
   // console.log(categories);
 
   /**  indique si on est en cours de chargement */
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const loadPosts = () => {
     // affiche 'false' => la mise à jour du state est asynchrone (pareil avec
@@ -68,10 +68,30 @@ const Blog = () => {
     // console.log('on a lancé le chargement des articles');
   };
 
+  // useEffect est équivalent à componentDidmount + componentDidUpdate pas de 2eme argument :
+  // useEffect(() => {
+  //   console.log('appel à useEffect');
+  // });
+
+  // useEffect écrit avec 2eme argument (tableau de dépendances)
+  // exécute l'effet après le 1er rendu,
+  // puis après les autres rendus seulement si l'argument (loading) a changé
+  // useEffect(() => {
+  //   console.log('loading a changé de valeur');
+  // }, [loading]);
+
+  // si argument vide ([]) exécute seulement aprs le 1er rendu (componentDidMount)
+  // chargemùent des articles pres le 1er rendu
+  useEffect(() => {
+    // console.log('loading a changé de valeur');
+    loadPosts();
+  }, []);
+
+  console.log('render blog component');
+
   return (
     <div className="blog">
       <Header categories={categories} />
-      <button type="button" onClick={loadPosts}>Charger les articles</button>
       { loading && (
         <Loader
           type="Bars"
