@@ -59,5 +59,13 @@
 
     &__excerpt {
         color: $alt-color;
+        
+        strong {
+            font-weight: bold;
+        }
+
+        em {
+            font-style: italic;
+        }
     }
 }
