@@ -138,7 +138,10 @@ const Blog = () => {
           <Redirect from="/jquery" to="/autre" />
           {categories.map((category) => (
             <Route exact path={category.route} key={category.label}>
-              <Posts posts={getPostByCategory(posts, category.label)} />
+              <Posts
+                posts={getPostByCategory(posts, category.label)}
+                category={category.label === 'Accueil' ? 'React Them All' : category.label}
+              />
             </Route>
           ))}
           <Route>
