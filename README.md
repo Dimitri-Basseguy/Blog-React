@@ -1,5 +1,3 @@
-# 
- a simple blog for training react
 # Blog React
 
 A simple blog for training react axios and hooks, useEffect.
@@ -26,9 +24,8 @@ sudo apt-get install git
 ```
 
 Clone this repo 
-* React
 
-Then install react with cli
+Then install dependencies with cli
 ```sh
 yarn
 ```
